@@ -199,12 +199,7 @@ pipeline {
             }
         }
         
-   stage('Lighthouse') { 
-    steps { 
-         sh 'npx lighthouse-ci https://teralco.com --jsonReport --report=.'
-         lighthouseReport file: './report.json', name: 'My Report'
-    } 
-}
+  
          stage('Promote container image') {
             steps {
                 echo '-=- promote container image -=-'
